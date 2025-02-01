@@ -1,13 +1,8 @@
-import Card from './Card.jsx';
+import UserGreeting from "./UserGreeting.jsx";
+
 function App() {
   return (
-    
-    <>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    </>
+    <UserGreeting isLoggedIn={true} username="Laderhad"/>
   );
   
 }
