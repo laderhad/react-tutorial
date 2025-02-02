@@ -1,9 +1,6 @@
-import UserGreeting from "./UserGreeting.jsx";
-
+import List from './List.jsx';
 function App() {
-  return (
-    <UserGreeting isLoggedIn={true} username="Laderhad"/>
-  );
+  return (<List/>);
   
 }
 
