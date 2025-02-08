@@ -1,31 +1,69 @@
 import React,{useState} from "react";
 
 function MyComponent(){
-    const [name,setName]=useState();
-    const[age,setAge]=useState(0);
-    const [isEmployeed,setIsEmployeed]=useState(false);
-    const updateName=()=>{
-        setName("mordecai");
-        console.log("rigby")
+    const[name,setName] = useState("Guest");
+    const[quantity,setQuantity]=useState(1);
+    const[comment,setComment]=useState("");
+    const[payment,setPayment]=useState("");
+    const[shipping,setShipping]=useState("");
+    
+    function handleChangeName(event){
+        setName(event.target.value);
     }
 
-    const incrementAge=()=>{
-        setAge(age+1);
+    function handleChangeQuantity(event){
+        setQuantity(event.target.value);
     }
-    const toggleEmployedStatus=()=>{
-        setIsEmployeed(!isEmployeed);
+
+    function handleChangeComment(event){
+        setComment(event.target.value);
     }
-    
+    function handleChangePayment(event){
+        setPayment(event.target.value);
+    }
+    function handleChangeShipping(event){
+        setShipping(event.target.value);
+    }
     return(
         <div>
+            <input value={name} onChange={handleChangeName} />
             <p>Name:{name}</p>
-            <button onClick={updateName}>Set Name</button>
-            
-            <p>Age:{age}</p>
-            <button onClick={incrementAge}>Increment Age</button>
 
-            <p>Is Employeed:{isEmployeed ? "Yes" : "No"}</p>
-            <button onClick={toggleEmployedStatus}>Toggle Status</button>
+            <input value={quantity} onChange={handleChangeQuantity}  type="number"/>
+            <p>Quantity:{quantity}</p>
+
+            <textarea value={comment} onChange={handleChangeComment} placeholder="Enter Delivery insturictions" />
+            <p>Comment:{comment}</p>
+
+            
+
+            <select value={payment} onChange={handleChangePayment}>
+                <option value="">Select a option</option>
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="GiftCard">GiftCard</option>
+            </select>
+            <p>Payment:{payment}</p>
+
+            <label>
+                <input type="radio" value="Pick Up"
+                checked={shipping==="Pick Up"}
+                onChange={handleChangeShipping}
+                />
+                Pick Up
+
+            </label><br />
+            <label>
+                <input type="radio" value="Delivery"
+                checked={shipping==="Delivery"}
+                onChange={handleChangeShipping}
+                />
+                Delivery
+
+            </label>
+            <p>Shipping:{shipping}</p>
+            
+            
         </div>
     );
 }
