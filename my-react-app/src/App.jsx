@@ -1,12 +1,16 @@
-import DigitalClock from "./DigitalClock";
+import { useState , useEffect } from "react";
+import ComponentA from './ComponentA.jsx';
 
 
 function App() {
+ 
+  
   
   return (
-    <DigitalClock/>
+    <>
+     <ComponentA />
+    </>
   );
-  
 }
 
 export default App
