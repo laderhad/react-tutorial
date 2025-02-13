@@ -1,10 +1,10 @@
-import MyComponentCleanUp from "./MyComponentCleanUp";
+import DigitalClock from "./DigitalClock";
 
 
 function App() {
   
   return (
-    <MyComponentCleanUp/>
+    <DigitalClock/>
   );
   
 }
