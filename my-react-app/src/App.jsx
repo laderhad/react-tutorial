@@ -1,10 +1,10 @@
-import ToDoList from "./ToDoList";
+import MyComponentCleanUp from "./MyComponentCleanUp";
 
 
 function App() {
   
   return (
-    <ExampleComponent/>
+    <MyComponentCleanUp/>
   );
   
 }
